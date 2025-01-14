@@ -41,7 +41,7 @@ The dataset comprises the following fields:
 
 ---
 
-### **⚙️ Risk Categorization Logic**
+### **⚙ Risk Categorization Logic**
 
 The `risk_category` is determined based on the following rules:  
 
@@ -61,7 +61,7 @@ The `risk_category` is determined based on the following rules:
 
 ---
 
-### **🛠️ Steps to Reproduce**
+### ** Steps to Reproduce**
 
 1. **Data Cleaning**  
    - Load the raw data into BigQuery.  
@@ -106,7 +106,7 @@ The `risk_category` is determined based on the following rules:
 
 ---
 
-### **🛠️ Tools & Technologies**
+### ** Tools & Technologies**
 
 - **Google BigQuery**: For SQL-based data analysis and transformations.  
 - **Python**: Used for machine learning integration and data preprocessing.  
@@ -115,7 +115,7 @@ The `risk_category` is determined based on the following rules:
 
 ---
 
-### **🗂️ File Structure**
+### ** File Structure**
 
 ```
 .
@@ -130,12 +130,12 @@ The `risk_category` is determined based on the following rules:
 
 ---
 
-### **📊 Visualization**  
+### ** Visualization**  
 Data visualizations are included in the project to highlight key insights and fraud patterns. View sample visualizations in the provided `Dashboard.png` file.
 
 ---
 
-### **🚀 How to Run**
+### ** How to Run**
 
 1. **Clone the Repository**:  
    ```bash
@@ -152,20 +152,20 @@ Data visualizations are included in the project to highlight key insights and fr
 
 ---
 
-### **📜 License**  
+### ** License**  
 This project is licensed under the **MIT License**. See the `LICENSE` file for further details.
 
 ---
 
-### **🙋‍♂️ Project Maintainer**  
-**👤 Donald Behrendt**  
+### ** Project Maintainer**  
+** Donald Behrendt**  
 
 Special thanks to the incredible contributors:  
-**✨ Amir, Kai, and Valery**
+** Amir, Kai, and Valery**
 
 ---
 
-### **🛠️ Dataset Source**  
+### ** Dataset Source**  
 The dataset used in this project is sourced from Kaggle’s **Transactions Fraud Datasets**.
 
 
