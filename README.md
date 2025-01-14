@@ -1,22 +1,22 @@
+
 # Caixa-Bank-Fraud-Detection
 This project focuses on analyzing customer data to evaluate risk levels using financial and behavioral metrics. The dataset includes key information such as income, debt, credit scores, and fraud history. Based on this analysis, customers are categorized into three distinct risk groups: High Risk, Medium Risk, and Low Risk.
-
 
 ### **Project Overview**
 
 This project leverages SQL and BigQuery to analyze customer data, providing insights into risk levels based on financial and behavioral metrics. The key objectives include:
 
 1. **Data Cleaning and Transformation**  
-   - Ensured data fields are standardized and prepared for analysis.  
+   - Ensured data fields are standardized and prepared for analysis.
 
 2. **Risk Categorization**  
-   - Introduced a calculated `risk_category` column based on predefined criteria.  
+   - Introduced a calculated `risk_category` column based on predefined criteria.
 
 3. **Dataset Enhancement**  
-   - Added a `has_fraud_history` column to flag customers with a history of fraudulent behavior.  
+   - Added a `has_fraud_history` column to flag customers with a history of fraudulent behavior.
 
 4. **Final Dataset Publication**  
-   - Generated a clean, enriched dataset for reporting and further analysis.  
+   - Generated a clean, enriched dataset for reporting and further analysis.
 
 ---
 
@@ -25,25 +25,25 @@ This project leverages SQL and BigQuery to analyze customer data, providing insi
 The dataset comprises the following fields:
 
 | **Column Name**       | **Type**    | **Description**                                              |
-|------------------------|-------------|--------------------------------------------------------------|
-| `customer_id`          | INTEGER     | Unique identifier for each customer.                        |
-| `current_age`          | INTEGER     | Current age of the customer.                                |
-| `yearly_income`        | INTEGER     | Annual income of the customer.                              |
-| `total_debt`           | INTEGER     | Total debt of the customer.                                 |
-| `credit_score`         | INTEGER     | Credit score of the customer.                               |
-| `per_capita_income`    | INTEGER     | Per capita income.                                          |
-| `retirement_age`       | INTEGER     | Expected retirement age.                                    |
-| `gender`               | STRING      | Gender of the customer.                                     |
-| `num_credit_cards`     | INTEGER     | Number of credit cards owned.                               |
-| `fraud_count`          | INTEGER     | Number of recorded fraud incidents.                         |
-| `has_fraud_history`    | INTEGER     | Indicates fraud history (`1` for yes, `0` for no).          |
-| `risk_category`        | STRING      | Categorized risk level of the customer.                     |
+|-----------------------|-------------|--------------------------------------------------------------|
+| `customer_id`         | INTEGER     | Unique identifier for each customer.                        |
+| `current_age`         | INTEGER     | Current age of the customer.                                |
+| `yearly_income`       | INTEGER     | Annual income of the customer.                              |
+| `total_debt`          | INTEGER     | Total debt of the customer.                                 |
+| `credit_score`        | INTEGER     | Credit score of the customer.                               |
+| `per_capita_income`   | INTEGER     | Per capita income.                                          |
+| `retirement_age`      | INTEGER     | Expected retirement age.                                    |
+| `gender`              | STRING      | Gender of the customer.                                     |
+| `num_credit_cards`    | INTEGER     | Number of credit cards owned.                               |
+| `fraud_count`         | INTEGER     | Number of recorded fraud incidents.                         |
+| `has_fraud_history`   | INTEGER     | Indicates fraud history (`1` for yes, `0` for no).          |
+| `risk_category`       | STRING      | Categorized risk level of the customer.                     |
 
 ---
 
-### **⚙ Risk Categorization Logic**
+### **Risk Categorization Logic**
 
-The `risk_category` is determined based on the following rules:  
+The `risk_category` is determined based on the following rules:
 
 - **High Risk**:  
   - `fraud_count` > 20  
@@ -57,18 +57,18 @@ The `risk_category` is determined based on the following rules:
   - `fraud_count` = 0 **AND** `credit_score` >= 750  
 
 - **Default**:  
-  - If none of the conditions are met, customers are categorized as **Low Risk**.  
+  - If none of the conditions are met, customers are categorized as **Low Risk**.
 
 ---
 
-### ** Steps to Reproduce**
+### **Work Path**
 
 1. **Data Cleaning**  
    - Load the raw data into BigQuery.  
-   - Validate data types and handle duplicates or null values.  
+   - Validate data types and handle duplicates or null values.
 
 2. **Add `risk_category` Column**  
-   Use the following SQL query to classify customers into risk levels:  
+   Use the following SQL query to classify customers into risk levels:
 
    ```sql
    CREATE OR REPLACE TABLE `project.dataset.generateddata_with_risk` AS
@@ -85,7 +85,7 @@ The `risk_category` is determined based on the following rules:
    ```
 
 3. **Add `has_fraud_history` Column**  
-   Create a column to indicate fraud history:  
+   Create a column to indicate fraud history:
 
    ```sql
    CREATE OR REPLACE TABLE `project.dataset.generateddata_with_fraud_history` AS
@@ -100,72 +100,70 @@ The `risk_category` is determined based on the following rules:
 4. **Publish Final Table**  
    Export the final table with all enriched columns for visualization or further reporting.
 
-   ![image](https://github.com/user-attachments/assets/32716df2-94a5-4043-8c1d-603dc792b542)
+---
 
+### **Tools & Technologies**
 
+- **Google BigQuery**: For SQL-based data analysis and transformations.
+- **Python**: Used for machine learning integration and data preprocessing.
+- **Power BI**: For interactive data visualization and reporting.
+- **GitHub**: Version control and project documentation.
 
 ---
 
-### ** Tools & Technologies**
-
-- **Google BigQuery**: For SQL-based data analysis and transformations.  
-- **Python**: Used for machine learning integration and data preprocessing.  
-- **Power BI**: For interactive data visualization and reporting.  
-- **GitHub**: Version control and project documentation.  
-
----
-
-### ** File Structure**
+### **File Structure**
 
 ```
 .
-├── 📁 Database/           # Dataset storage and updates
-├── 📁 app/                # Scripts and code for data transformations
-├── README.md              # Project documentation
-├── clf.pkl                # Machine learning model file
-├── Dashboard.png          # Sample data visualization
-├── 📁 SQL_Scripts/        # SQL queries for data processing
-└── 📁 Outputs/            # Final results and reports
+├── Database/           # Dataset storage and updates
+├── app/                # Scripts and code for data transformations
+├── README.md           # Project documentation
+├── clf.pkl             # Machine learning model file
+├── Dashboard.png       # Sample data visualization
+├── SQL_Scripts/        # SQL queries for data processing
+└── Outputs/            # Final results and reports
 ```
 
 ---
 
-### ** Visualization**  
+### **Visualization**  
 Data visualizations are included in the project to highlight key insights and fraud patterns. View sample visualizations in the provided `Dashboard.png` file.
 
 ---
 
-### ** How to Run**
+### **How to Run**
 
 1. **Clone the Repository**:  
    ```bash
    git clone https://github.com/SubRosaCodr/Caixa-Bank-Fraud-Detection.git
    ```
+
 2. **Navigate to the Project Directory**:  
    ```bash
    cd Caixa-Bank-Fraud-Detection
    ```
+
 3. **Execute SQL Scripts**:  
-   Run the provided SQL queries in BigQuery to process the data.  
+   Run the provided SQL queries in BigQuery to process the data.
+
 4. **Analyze Results**:  
-   Used to visualize the outcomes.
+   Use Power BI to visualize and interpret results.
 
 ---
 
-### ** License**  
+### **License**  
 This project is licensed under the **MIT License**. See the `LICENSE` file for further details.
 
 ---
 
-### ** Project Maintainer**  
-** Donald Behrendt**  
+### **Project Maintainer**  
+**Donald Behrendt**
 
 Special thanks to the incredible contributors:  
-** Amir, Kai, and Valery**
+**Amir, Kai, and Valery**
 
 ---
 
-### ** Dataset Source**  
+### **Dataset Source**  
 The dataset used in this project is sourced from Kaggle’s **Transactions Fraud Datasets**.
-
 
