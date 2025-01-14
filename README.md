@@ -156,7 +156,7 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for f
 
 ---
 
-### **Project Maintainer**  
+### **Project Maintainers**  
 **Donald Behrendt**
 
 Special thanks to the incredible contributors:  
